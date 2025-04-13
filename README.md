@@ -230,44 +230,10 @@ Simulink
 
 ![Figura de prueba](IMAGES/poleas.png)
 
+Simscape Multibody
 
-#### Tornillo Guía (Lead Screw)  
-- **Relación de transmisión**:  
-  \[ N_S = 2\pi \cdot \text{Paso (m/rev)} \]  
-- **Ejemplo**:  
-  - Paso de 0.01 m/rev → \( N_S = 0.063 \).  
+![Figura de prueba](IMAGES/poleamultibody.png) 
 
----
-
-## Ejemplos (Diferentes al Documento)
-### Ejemplo 1: Transmisión por Cadena  
-- **Enunciado**:  
-  Un motor con piñón de 10 dientes mueve una carga mediante una cadena y un piñón de 30 dientes. Calcule la inercia reflejada si \( J_{\text{load}} = 0.1 \, \text{kg·m}^2 \) y \( \eta = 95\% \).  
-- **Solución**:  
-  \[ J_{\text{ref}} = \frac{J_{\text{load}}}{\eta \cdot N_{\text{GB}}^2} = \frac{0.1}{0.95 \cdot 3^2} = 0.0117 \, \text{kg·m}^2 \]  
-
-### Ejemplo 2: Transmisión por Correa Trapezoidal  
-- **Enunciado**:  
-  Una polea motora de 8 cm gira a 1200 RPM y mueve una polea conducida de 24 cm. Si la carga requiere 50 N·m, calcule el torque reflejado en el motor (\( \eta = 90\% \)).  
-- **Solución**:  
-  \[ T_{\text{ref}} = \frac{T_{\text{load}}}{\eta \cdot N_{\text{BP}}} = \frac{50}{0.9 \cdot 3} = 18.52 \, \text{N·m} \]  
-
----
-
-## Ecuaciones Clave
-1. **Inercia reflejada**:  
-   \[ J_{\text{ref}} = \frac{J_{\text{load}}}{\eta \cdot N^2} \]  
-2. **Torque reflejado**:  
-   \[ T_{\text{ref}} = \frac{T_{\text{load}}}{\eta \cdot N} \]  
-3. **Relación de velocidad**:  
-   \[ N = \frac{\omega_{\text{motor}}}{\omega_{\text{load}}} \]  
-
----
-
-## Figuras y Tablas
-### Figura 1: Esquema de Transmisión por Engranajes  
-![Engranajes](placeholder_engranajes.png)  
-*Descripción: Sistema motor-engranaje-carga con relación 3:1.*  
 
 ### Tabla 1: Comparación de Transmisiones  
 | Tipo          | Ventajas                     | Desventajas               |  
@@ -275,25 +241,14 @@ Simulink
 | Engranajes    | Alta precisión               | Costo elevado             |  
 | Polea-Correa  | Silenciosa                   | Deslizamiento posible     |  
 
----
 
-## Ejercicios Prácticos
-1. **Ejercicio 1**:  
-   Un tornillo guía con paso de 0.02 m/rev mueve una carga de 80 kg. Calcule \( J_{\text{ref}} \) si \( \eta = 85\% \).  
-   \[ \text{Solución: } J_{\text{ref}} = \frac{80}{(2\pi \cdot 0.02)^2 \cdot 0.85} \]  
-
-2. **Ejercicio 2**:  
-   Un motor con \( J_m = 0.01 \, \text{kg·m}^2 \) y relación de inercia \( J_R = 4 \). Determine la inercia total del sistema.  
-   \[ \text{Solución: } J_{\text{total}} = J_m \cdot (1 + J_R) \]  
-
----
 
 ## Conclusiones
 - El diseño de transmisiones requiere equilibrar torque, inercia y eficiencia.  
 - La relación de transmisión es crítica para reflejar correctamente cargas al motor.  
 - Simulaciones (e.g., Simscape) son herramientas esenciales para validar diseños.  
 
----
+
 
 ## Referencias
 1. Universidad ECCI. *Control de Movimiento*. Disponible en: [www.ecci.edu.co](https://www.ecci.edu.co)  
