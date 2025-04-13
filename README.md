@@ -224,6 +224,12 @@ $$
 
 La prinicpal diferencia con un sistema de engranajes es que en este, las poleas giran hacia la misma dirección. 
 
+### Simulaciones
+
+Simulink  
+
+![Figura de prueba](IMAGES/poleas.png)
+
 
 #### Tornillo Guía (Lead Screw)  
 - **Relación de transmisión**:  
