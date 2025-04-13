@@ -190,14 +190,40 @@ $$
 
 ### Relación de inercia
 
-Los relaciones de transmisión y de las caracteristicas de los mecanismos, estan dadas en terminos de relación d einercia, es decir el porcentaje de incercia total que tiene que mover el motor con respecto a la incercia del motor, y con estas se logra reconocer si se esta lejos o cerca de el valor que puede mover el motor. En la práctica, la relación de inercia permite definir el motor que cumpla con los requqerimientos necesarios, esto a traves de dos rangos que se presentan en la tabla a continuacióm. 
+Los relaciones de transmisión y de las caracteristicas de los mecanismos, estan dadas en terminos de relación d einercia, es decir el porcentaje de incercia total que tiene que mover el motor con respecto a la incercia del motor, y con estas se logra reconocer si se esta lejos o cerca de el valor que puede mover el motor. En la práctica, la relación de inercia permite definir el motor que cumpla con los requqerimientos necesarios, esto a traves de dos rangos que se presentan en la tabla a continuacióm.   
 
+$$
+J_R = \frac{J_{\text{on motor shaft}} + J_{\text{ref}}}{J_m}
+$$
 
-#### Polea-Correa  
+$$
+J_R = \frac{J_{\text{on motor shaft}} + J_{\text{load} \rightarrow M} + J_{\text{GB} \rightarrow M}}{J_m}
+$$  
+
+| Relación inercia | Rango      | Casos                                               | Posibles problemas                        |
+|------------------|------------|-----------------------------------------------------|-------------------------------------------|
+| Baja             | 1 o 2      | Movimientos rápidos, frecuentes paradas y arranques | Motor sobredimensionado                   |
+| Alta             | Mayor a 10 | No es importante dinámicas rápidas                 | Baja eficiencia o Torque insuficiente     |
+
+Cuando se habla de movimiento rápidos, se refiere a que las ruedas tienen una diferencia pequeña, entre si, por lo que los movimientos van a responder más rápido. Y cuando se refiere a baja eficiencia, se puede interpretar que el motor se esta quedando corto respecto a sus necesidades. 
+
+En conclusión lo recomendable es tener una relación de inercia menor o igual a 5 y claramente, mayor a 2. 
+
+### Polea-Correa  
+
+Este mecanismo convierte moviemiento ortacional en movimiento rotacional, sin embargo, dependiendo del tamaño de las poleas se tiene ventaja mecánica. Estas pueden ser lisas, dentadas o sistemas de cadena, y dependiendo del tamaño de la carga se obtiene el tipo de cadena a usar. 
+##
 - **Relación de transmisión**:  
-  \[ N_{\text{BP}} = \frac{r_{\text{polea conducida}}}{r_{\text{polea motora}}} \]  
-- **Ejemplo**:  
-  - Polea motora de 5 cm y conducida de 15 cm → \( N_{\text{BP}} = 3 \).  
+  $$
+V_{tangential} = \omega_{ip} \cdot r_{ip} = \omega_{lp} \cdot r_{lp}
+$$
+
+$$
+N_{BP} = \frac{\omega_{ip}}{\omega_{lp}} = \frac{r_{lp}}{r_{ip}}
+$$
+
+La prinicpal diferencia con un sistema de engranajes es que en este, las poleas giran hacia la misma dirección. 
+
 
 #### Tornillo Guía (Lead Screw)  
 - **Relación de transmisión**:  
