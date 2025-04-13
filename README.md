@@ -196,9 +196,7 @@ $$
 J_R = \frac{J_{\text{on motor shaft}} + J_{\text{ref}}}{J_m}
 $$
 
-$$
-J_R = \frac{J_{\text{on motor shaft}} + J_{\text{load} \rightarrow M} + J_{\text{GB} \rightarrow M}}{J_m}
-$$  
+$$J_R = \frac{J_{\text{on motor shaft}} + J_{\text{load} \rightarrow M} + J_{\text{GB} \rightarrow M}}{J_m}$$  
 
 | Relación inercia | Rango      | Casos                                               | Posibles problemas                        |
 |------------------|------------|-----------------------------------------------------|-------------------------------------------|
@@ -208,15 +206,14 @@ $$
 Cuando se habla de movimiento rápidos, se refiere a que las ruedas tienen una diferencia pequeña, entre si, por lo que los movimientos van a responder más rápido. Y cuando se refiere a baja eficiencia, se puede interpretar que el motor se esta quedando corto respecto a sus necesidades. 
 
 En conclusión lo recomendable es tener una relación de inercia menor o igual a 5 y claramente, mayor a 2. 
-
+##
 ### Polea-Correa  
 
 Este mecanismo convierte moviemiento ortacional en movimiento rotacional, sin embargo, dependiendo del tamaño de las poleas se tiene ventaja mecánica. Estas pueden ser lisas, dentadas o sistemas de cadena, y dependiendo del tamaño de la carga se obtiene el tipo de cadena a usar. 
-##
+
 - **Relación de transmisión**:  
-  $$
-V_{tangential} = \omega_{ip} \cdot r_{ip} = \omega_{lp} \cdot r_{lp}
-$$
+
+$$V_{tangential} = \omega_{ip} \cdot r_{ip} = \omega_{lp} \cdot r_{lp}$$
 
 $$
 N_{BP} = \frac{\omega_{ip}}{\omega_{lp}} = \frac{r_{lp}}{r_{ip}}
@@ -234,8 +231,83 @@ Simscape Multibody
 
 ![Figura de prueba](IMAGES/poleamultibody.png) 
 
+### Inercia reflejada  
 
-### Tabla 1: Comparación de Transmisiones  
+$$J_{trans_{ref}}=J_{IP}+J_{belt\rightarrow in}+J_{LP\rightarrow in}+J_{load\rightarrow in}+J_{C2\rightarrow in}$$
+
+$$=J_{IP}+\left(\frac{W_{belt}}{g\cdot\eta}\right)\cdot r_{ip}^2+\frac{1}{\eta N_{BP}^2}(J_{LP}+J_{load}+J_{C2})$$  
+
+Todos los elementos que componene esta ecuación responden a una relación de transmisión, excepto la correa, por lo tanto su inercia reflejada se expresa de la siguiente manera: 
+
+$$J=mr^2$$
+
+Sustituyendo $W_{belt}=mg$ y $r=r_{ip}$:
+
+$$J_{belt\rightarrow in}=\frac{W_{belt}}{g\cdot\eta}\cdot r_{ip}^2$$
+
+### Torque de carga   
+
+$$T_{load\rightarrow in}=\frac{T_{ext}}{\eta N_{BP}}$$
+
+## Ejercicios adicionales 
+### 1. 
+Un sistema utiliza un engranaje con una relación de 8:1, una inercia reflejada a la entrada de 0.25 kg·cm² y una eficiencia del 95%. El motor tiene una inercia del rotor de 2×10⁻⁵ kg·m², y la inercia de la carga es de 5×10⁻⁴ kg·m².
+Encuentra la relación de inercia $J_R$.
+
+ **Datos:**
+- $N_{\text{GB}} = 8$
+- $\eta = 0.95$
+- $J_{\text{GB} \rightarrow M} = 0.25 \ \text{kg·cm}^2 = 0.25 \times 10^{-4} \ \text{kg·m}^2$
+- $J_m = 2 \times 10^{-5} \ \text{kg·m}^2$
+- $J_{\text{load}} = 5 \times 10^{-4} \ \text{kg·m}^2$
+
+**1. Inercia reflejada de la carga al motor:**
+
+$$
+J_{\text{load} \rightarrow M} = \frac{J_{\text{load}}}{\eta N_{\text{GB}}^2}
+= \frac{5 \times 10^{-4}}{0.95 \cdot 8^2}
+= \frac{5 \times 10^{-4}}{60.8}
+= 8.22 \times 10^{-6} \ \text{kg·m}^2
+$$
+
+**2. Relación de inercia total:**
+
+$$
+J_R = \frac{J_{\text{on motor shaft}} + J_{\text{load} \rightarrow M} + J_{\text{GB} \rightarrow M}}{J_m}
+= \frac{0.25 \times 10^{-4} + 8.22 \times 10^{-6}}{2 \times 10^{-5}} 
+= \frac{3.322 \times 10^{-5}}{2 \times 10^{-5}} 
+= 1.66
+$$
+
+### 2.
+**Datos:**
+- $N_{\text{GB}} = 4$
+- $\eta = 0.90$
+- $J_{\text{GB} \rightarrow M} = 0.10 \times 10^{-4} \ \text{kg·m}^2$
+- $J_m = 1 \times 10^{-5} \ \text{kg·m}^2$
+- $J_{\text{load}} = 2 \times 10^{-3} \ \text{kg·m}^2$
+
+**1. Inercia reflejada:**
+
+$$
+J_{\text{load} \rightarrow M} = \frac{2 \times 10^{-3}}{0.90 \cdot 4^2}
+= \frac{2 \times 10^{-3}}{14.4}
+= 1.39 \times 10^{-4} \ \text{kg·m}^2
+$$
+
+**2. Relación de inercia:**
+
+$$
+J_R = \frac{0.10 \times 10^{-4} + 1.39 \times 10^{-4}}{1 \times 10^{-5}}
+= \frac{1.49 \times 10^{-4}}{1 \times 10^{-5}}
+= 14.9
+$$
+
+Se tiene un reductor con relación de 4:1, eficiencia del 90%, y una inercia reflejada a la entrada de 0.10 kg·cm². El motor tiene una inercia de 1×10⁻⁵ kg·m² y la inercia de la carga es 2×10⁻³ kg·m².
+Calcula la inercia reflejada a la entrada del motor y la relación de inercia $J_R$.
+
+
+## Comparación de Transmisiones  
 | Tipo          | Ventajas                     | Desventajas               |  
 |---------------|-----------------------------|---------------------------|  
 | Engranajes    | Alta precisión               | Costo elevado             |  
@@ -251,6 +323,5 @@ Simscape Multibody
 
 
 ## Referencias
-1. Universidad ECCI. *Control de Movimiento*. Disponible en: [www.ecci.edu.co](https://www.ecci.edu.co)  
-2. Apex Dynamics. *Catálogo de Engranajes PN023*.  
-3. Moog. *Especificaciones del Motor C23L33W10*.  
+1. Universidad ECCI. *Control de Movimiento*. 
+
