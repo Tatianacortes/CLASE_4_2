@@ -21,6 +21,7 @@
   
 ## Tipos de Transmisiones Mecánicas
 ### Engranajes  
+![Figura de prueba](IMAGES/engranajes.png)
 ##
 - **Relación de transmisión**:
   Se puede encontrar revisando la velocidad tangencial de las dos ruedas, o la potencia mecánica, y a partir de estas dos caracteristicas se pueden obtener las siguientes ecuaciones equivalentes. 
@@ -71,7 +72,93 @@ $\frac{\omega_m}{\omega_l}=\frac{T_l}{T_m}$
 
 $N_{GB}=\frac{\omega_m}{\omega_l}=\frac{r_l}{r_m}=\frac{n_l}{n_m}=\frac{T_l}{T_m}$
 
+**NOTA:** EL TORQUE QUE ESTA GENERANDO LA RUEDA MOTRIZ ES DIFERENTE AL TORQUE QUE EXPERIMENTA LA CARGA
+
+### Simulaciones 
+
+Simulink  
+
+![Figura de prueba](IMAGES/simulink.png)
+
+Simscape Multibody
+
+![Figura de prueba](IMAGES/multibody.png) 
+
 ### Inercia reflejada
+---
+
+Acople directo: Motor, eje y carga:  
+
+$T_m = J_{load} \, \ddot{\theta}_m$
+
+---
+
+Sistema de engranajes: Motor, sistema de engranajes y carga:  
+
+$T_l = J_{load} \, \ddot{\theta}_l$  
+
+$\dfrac{r_l}{r_m} T_m = J_{load} \, \ddot{\theta}_l$  
+
+Si se usa la relación de desplazamiento tangencial:   
+$r_l \theta_l = r_m \theta_m$  
+
+Obteniendo:  
+$r_l \ddot{\theta}_l = r_m \ddot{\theta}_m$
+
+$r_l \theta_l = r_m \theta_m$
+
+Reemplazando:
+
+$\dfrac{r_l}{r_m} T_m = J_{load} \, \dfrac{r_m}{r_l} \ddot{\theta}_m$  
+
+Despejando:
+
+$T_m = J_{load} \left( \dfrac{r_m}{r_l} \right)^2 \ddot{\theta}_m$
+
+**Inercia reflejada**
+$= J_{load} \, \dfrac{1}{N_{GB}^2} \ddot{\theta}_m$
+---
+### Torque reflejado 
+
+De la relación dada por la potencia:    
+
+$\frac{\omega_m}{\omega_l} = \frac{T_l}{T_m}$
+
+$T_m = \frac{\omega_l}{\omega_m} T_l$
+
+**Torque reflejado= $\quad = \frac{T_l}{N_{GB}}$**
+
+### Eficiencia
+
+Relación de salida y entrada  
+
+$\quad P = T \cdot \omega$
+
+$\eta = \frac{P_{output}}{P_{input}}$
+
+$T_l \, \omega_l = \eta \, T_m \, \omega_m$
+
+$T_m = \frac{T_l}{\eta \, N_{GB}}$
+
+$J_{ref} = \frac{J_{load}}{\eta \, N_{GB}^2}$
+
+Se debe tener en cuenta que los engranajes no son ideales, tienen una eficiencia puesto que se enfrentan a perdidas en cuanto a la fricción, el acople o demás, esta fricción la da en el fabricante, existen cajas desde 90 o hasta 95% de eficiencia. 
+
+**PARA TODO EL DIMENSIONAMIENTO DEL MOTOR, SE CONOCE LA INERCIA TOTAL:**  
+
+$J_{total} = J_m + J_{\text{on motor shaft}} + J_{ref}$    
+
+$J_m$: Inercia ejer motor.  
+
+$J_{\text{on motor shaft}}$: Inercia acople y transmisión.  
+
+$J_{ref}$: Inercia reflejado.  
+
+---
+### Ejemplo
+
+
+
 
 
 #### Polea-Correa  
