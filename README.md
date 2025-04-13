@@ -168,12 +168,29 @@ $J_\text{ref} = \frac{1}{\eta N_\text{GB}^2} \left[ J_\text{lg} + J_\text{load} 
 
 $J_\text{total} = J_m + J_\text{coupling} + J_\text{mg} + \frac{1}{\eta N_\text{GB}^2} \left[ J_\text{lg} + J_\text{load} \right]$
 
+![Figura de prueba](IMAGES/bloques.png)
+
 #### 2.
-El Sistema en la figura usa un engranaje PN023 de Apex Dynamics. Este tiene 5:1 de relación, 0,15 Kg − cm2 reflejado a la entrada y 97% de eficiencia. El motor es un Quantum QB02301 NEMA tamaño 23 de Allied Motion Technologies. Este tiene 1,5x10−5 Kg − m2 de inercia en el rotor. Si la inercia de la carga es 10x10−4 Kg − m2. Encuentre la relación de inercia
+El Sistema en la figura usa un engranaje PN023 de Apex Dynamics. Este tiene 5:1 de relación, 0,15 Kg − cm2 reflejado a la entrada y 97% de eficiencia. El motor es un Quantum QB02301 NEMA tamaño 23 de Allied Motion Technologies. Este tiene 1,5x10−5 Kg − m2 de inercia en el rotor. Si la inercia de la carga es 10x10−4 Kg − m2. Encuentre la relación de inercia.  
+
+![Figura de prueba](IMAGES/ejemplo.png)  
+
+$$
+J_{\text{load} \rightarrow M} = \frac{J_{\text{load}}}{\eta N_{\text{GB}}^2}
+= \frac{10 \times 10^{-4}}{0.97 \cdot 5^2}
+= 4.124 \times 10^{-5} \ \text{kg·m}^2
+$$
+
+$$
+J_R = \frac{J_{\text{on motor shaft}} + J_{\text{load} \rightarrow M} + J_{\text{GB} \rightarrow M}}{J_m}
+= \frac{4.124 \times 10^{-5} + 0.15 \times 10^{-4}}{1.5 \times 10^{-5}}
+= 3.75
+$$
+
 
 ### Relación de inercia
 
-Los relaciones de transmisión y de las caracteristicas de los mecanismos, estan dadas en terminos de relación d einercia, es decir el porcentaje de incercia total que tiene que mover el motor con respecto a la incercia del motor. 
+Los relaciones de transmisión y de las caracteristicas de los mecanismos, estan dadas en terminos de relación d einercia, es decir el porcentaje de incercia total que tiene que mover el motor con respecto a la incercia del motor, y con estas se logra reconocer si se esta lejos o cerca de el valor que puede mover el motor. En la práctica, la relación de inercia permite definir el motor que cumpla con los requqerimientos necesarios, esto a traves de dos rangos que se presentan en la tabla a continuacióm. 
 
 
 #### Polea-Correa  
