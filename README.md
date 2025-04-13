@@ -295,7 +295,10 @@ J_{\text{load} \rightarrow M} = \frac{2 \times 10^{-3}}{0.90 \cdot 4^2}
 = 1.39 \times 10^{-4} \ \text{kg·m}^2
 $$
 
-**2. Relación de inercia:**
+**2. Relación de inercia:**  
+
+Se tiene un reductor con relación de 4:1, eficiencia del 90%, y una inercia reflejada a la entrada de 0.10 kg·cm². El motor tiene una inercia de 1×10⁻⁵ kg·m² y la inercia de la carga es 2×10⁻³ kg·m².
+Calcula la inercia reflejada a la entrada del motor y la relación de inercia $J_R$.  
 
 $$
 J_R = \frac{0.10 \times 10^{-4} + 1.39 \times 10^{-4}}{1 \times 10^{-5}}
@@ -303,8 +306,7 @@ J_R = \frac{0.10 \times 10^{-4} + 1.39 \times 10^{-4}}{1 \times 10^{-5}}
 = 14.9
 $$
 
-Se tiene un reductor con relación de 4:1, eficiencia del 90%, y una inercia reflejada a la entrada de 0.10 kg·cm². El motor tiene una inercia de 1×10⁻⁵ kg·m² y la inercia de la carga es 2×10⁻³ kg·m².
-Calcula la inercia reflejada a la entrada del motor y la relación de inercia $J_R$.
+
 
 
 ## Comparación de Transmisiones  
