@@ -1,4 +1,4 @@
-# CLASE_4_2
+# CLASE 4 II CORTE
 # Diseño de Sistemas de Transmisión en Control de Movimiento
 
 ## Objetivos del diseño ##  
