@@ -157,8 +157,23 @@ $J_{ref}$: Inercia reflejado.
 ---
 ### Ejemplo
 
+#### 1. 
+![Figura de prueba](IMAGES/motor.png)   
 
+$J_\text{total} = J_m + J_\text{on motor shaft} + J_\text{ref}$
 
+$J_\text{on motor shaft} = J_\text{coupling} + J_\text{mg}$
+
+$J_\text{ref} = \frac{1}{\eta N_\text{GB}^2} \left[ J_\text{lg} + J_\text{load} \right]$
+
+$J_\text{total} = J_m + J_\text{coupling} + J_\text{mg} + \frac{1}{\eta N_\text{GB}^2} \left[ J_\text{lg} + J_\text{load} \right]$
+
+#### 2.
+El Sistema en la figura usa un engranaje PN023 de Apex Dynamics. Este tiene 5:1 de relación, 0,15 Kg − cm2 reflejado a la entrada y 97% de eficiencia. El motor es un Quantum QB02301 NEMA tamaño 23 de Allied Motion Technologies. Este tiene 1,5x10−5 Kg − m2 de inercia en el rotor. Si la inercia de la carga es 10x10−4 Kg − m2. Encuentre la relación de inercia
+
+### Relación de inercia
+
+Los relaciones de transmisión y de las caracteristicas de los mecanismos, estan dadas en terminos de relación d einercia, es decir el porcentaje de incercia total que tiene que mover el motor con respecto a la incercia del motor. 
 
 
 #### Polea-Correa  
