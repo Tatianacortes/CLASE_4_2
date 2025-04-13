@@ -299,11 +299,12 @@ J_{\text{load} \rightarrow M} = \frac{2 \times 10^{-3}}{0.90 \cdot 4^2}
 = 1.39 \times 10^{-4} \ \text{kg·m}^2
 $$
 
-**2. Relación de inercia:**  
+**2. Relación de inercia:**
+
 $$
-J_R = \frac{0.10 \times 10^{-4} + 1.39 \times 10^{-4}}{1 \times 10^{-5}}
-= \frac{1.49 \times 10^{-4}}{1 \times 10^{-5}}
-= 14.9
+J_R = \frac{0.18 \times 10^{-4} + 8.33 \times 10^{-6}}{2.5 \times 10^{-5}}
+= \frac{2.633 \times 10^{-5}}{2.5 \times 10^{-5}}
+= 1.05
 $$
 
 
